@@ -1,11 +1,12 @@
 import pandas as pd
 import streamlit as st
+import os
 
 st.header("Data Frame")
 
 # Check if data is already in session state, otherwise load it
 with st.spinner("Loading data..."):
-    df = pd.read_excel('utils/sampledata.xlsx')
+    df = pd.read_excel(os.path.join("utils", "sampleData.xlsx"))
 
 st.caption("This is example data from an Excel file")
 
