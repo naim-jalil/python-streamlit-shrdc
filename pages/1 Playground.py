@@ -1,6 +1,7 @@
 from PIL import Image
 import streamlit as st
 import pandas as pd
+import os
 
 st.write("Hello, Dell again!")
 st.header("Hello, Dell again!")
@@ -48,7 +49,7 @@ st.write("The current number is ", number)
 im = Image.open('utils/shrdc_logo.png')
 st.image(im, width=300)
 
-df = pd.read_excel('utils/sampledata.xlsx')
+df = pd.read_excel(os.path.join("utils", "sampleData.xlsx"))
 st.dataframe(df)
 
 st.bar_chart(df, x="Location", y="Income")
